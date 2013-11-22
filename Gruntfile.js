@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           { expand: true, cwd: './source/js/', src: '*', dest: './public/js/'},
-          { expand: true, cwd: './source/css/', src: 'style.css', dest: './public/css/' },
+          { expand: true, cwd: './source/css/', src: ['style.css', 'pattern.css'], dest: './public/css/' },
           { expand: true, cwd: './source/images/', src: '*', dest: './public/images/' },
           { expand: true, cwd: './source/images/sample/', src: '*', dest: './public/images/sample/'},
           { expand: true, cwd: './source/fonts/', src: '*', dest: './public/fonts/'}
@@ -49,6 +49,7 @@ module.exports = function(grunt) {
         },
         files: {
           './source/css/style.css': './source/css/style.scss',
+          './source/css/pattern.css': './source/css/pattern.scss',
           './public/styleguide/css/static.css': './public/styleguide/css/static.scss',
           './public/styleguide/css/styleguide.css': './public/styleguide/css/styleguide.scss'
         }
@@ -57,8 +58,8 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
+          base: 'public/',
           port: 3000,
-          base: 'public/'
         },
       },
     },
