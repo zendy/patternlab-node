@@ -28,10 +28,10 @@ module.exports = function(grunt) {
       patternlab: ['Gruntfile.js', './builder/lib/patternlab.js']
     },
     watch: {
-      // scss: { //scss can be watched if you like
-      //  files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
-      //  tasks: ['default']
-      // },
+      scss: { //scss can be watched if you like
+       files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
+       tasks: ['default']
+      },
       mustache: {
         files: ['source/_patterns/**/*.mustache'],
         tasks: ['default']
@@ -53,7 +53,15 @@ module.exports = function(grunt) {
           './public/styleguide/css/styleguide.css': './public/styleguide/css/styleguide.scss'
         }
       }
-    }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: 'public/'
+        },
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -61,10 +69,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   //load the patternlab task
   grunt.task.loadTasks('./builder/');
 
   //if you choose to use scss, or any preprocessor, you can add it here
-  grunt.registerTask('default', ['clean', 'patternlab', /*'sass',*/ 'copy']);
+  grunt.registerTask('default', ['clean', 'patternlab', 'sass', 'copy']);
+  grunt.registerTask('dev', ['connect', 'watch']);
 };
