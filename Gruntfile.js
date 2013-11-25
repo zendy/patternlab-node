@@ -55,6 +55,16 @@ module.exports = function(grunt) {
         }
       }
     },
+    compass: {
+      build: {
+        options: {
+          cssDir: './source/css/',
+          sassDir: './source/css/',
+          force: true,
+          outputStyle: 'expanded',
+        }
+      }
+    },
     connect: {
       server: {
         options: {
@@ -71,11 +81,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   //load the patternlab task
   grunt.task.loadTasks('./builder/');
 
   //if you choose to use scss, or any preprocessor, you can add it here
-  grunt.registerTask('default', ['clean', 'patternlab', 'sass', 'copy']);
+  // grunt.registerTask('default', ['clean', 'patternlab', 'sass', 'copy']);
+  grunt.registerTask('default', ['clean', 'patternlab', 'compass', 'copy']);
   grunt.registerTask('dev', ['connect', 'watch']);
 };

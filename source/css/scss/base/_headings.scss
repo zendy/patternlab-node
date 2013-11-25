@@ -1,31 +1,38 @@
-/* Headings */
-/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
-h1, .alpha   { 
-	line-height: 1.2;
-}
+/*------------------------------------*\
+    HEADINGS
+\*------------------------------------*/
+/**
+ * h1, .aplha
+ * h2, .beta
+ * h3, .gamma
+ * h4, .delta
+ * h5, .teta
+ * h6, .zeta
+ */
 
-h2, .beta    { 
-	line-height: 1.2;
-}
 
-h3, .gamma   { 
-	line-height: 1.2;
-}
+@include at-breakpoint( $total-columns ) {
+  h1, .alpha {
+    @include font-size-in-em( 36px );
+  }
 
-h4, .delta   {
-	
-}
+  h2, .beta {
+    @include font-size-in-em( 31px );
+  }
 
-h5, .epsilon { 
-	
-}
+  h3, .gamma {
+    @include font-size-in-em( 27px );
+  }
 
-h6, .zeta    { 
-	
-}
+  h4, .delta {
+    @include font-size-in-em( 22px );
+  }
 
-/* Subheadings */
-.subheading {
-	font-family: $font-secondary;
-	font-weight: normal;
+  h5, .teta {
+    @include font-size-in-em( 15px );
+  }
+
+  h6, .zeta {
+    @include font-size-in-em( 12px );
+  }
 }

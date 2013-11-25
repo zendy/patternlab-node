@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+/**
+ * .btn
+ * .btn--disabled
+ * .btn--small
+ * .btn--large
+ */
+
+
+.btn {
+  display: inline-block;
+  padding: $default-pad-half;
+  background-color: #fff;
+  border: 0;
+  color: $font-color;
+  line-height: 1;
+  text-align: center;
+}
+
+.btn--disabled {
+  background-color: #f9f9f9;
+  color: #fff;
+}
+
+.btn--small {
+  font-size: $font-size-slightly-smaller;
+}
+
+.btn-large {
+  padding: $default-pad-half;
+  font-size: $font-size-slightly-larger;
+}
