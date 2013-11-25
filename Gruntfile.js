@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scss: { //scss can be watched if you like
-       files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
+       files: ['source/css/**/*.scss', 'public/styleguide/styles/*.scss'],
        tasks: ['default']
       },
       mustache: {
@@ -50,8 +50,8 @@ module.exports = function(grunt) {
         files: {
           './source/css/style.css': './source/css/style.scss',
           './source/css/pattern.css': './source/css/pattern.scss',
-          './public/styleguide/css/static.css': './public/styleguide/css/static.scss',
-          './public/styleguide/css/styleguide.css': './public/styleguide/css/styleguide.scss'
+          './public/styleguide/styles/static.css': './public/styleguide/styles/static.scss',
+          './public/styleguide/styles/styleguide.css': './public/styleguide/styles/styleguide.scss'
         }
       }
     },

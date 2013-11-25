@@ -1,4 +1,10 @@
-/* line 2, pattern.scss */
+/* line 1, pattern.scss */
+.sg-main {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* line 7, pattern.scss */
 .sg-colors li {
   display: inline-block;
   margin-bottom: 10px;
@@ -7,7 +13,7 @@
   border: 1px solid;
   text-align: center;
 }
-/* line 11, pattern.scss */
+/* line 16, pattern.scss */
 .sg-colors .sg-swatch {
   display: block;
   margin: 0 auto;

@@ -10,6 +10,14 @@
  * h6, .zeta
  */
 
+h1, h2, h3, h4, h6 {
+  font-family: "DIN-Bold";
+  font-weight: 700;
+}
+
+h4, h5 {
+  color: #cc0544;
+}
 
 @include at-breakpoint( $total-columns ) {
   h1, .alpha {
@@ -29,6 +37,8 @@
   }
 
   h5, .teta {
+    font-family: "DIN-Medium";
+    font-weight: 400;
     @include font-size-in-em( 15px );
   }
 

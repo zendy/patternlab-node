@@ -21,7 +21,7 @@
 
 .btn--disabled {
   background-color: #f9f9f9;
-  color: #fff;
+  color: #ddd;
 }
 
 .btn--small {
@@ -31,4 +31,34 @@
 .btn-large {
   padding: $default-pad-half;
   font-size: $font-size-slightly-larger;
+}
+
+.btn--submit {
+  padding: $default-pad;
+  background-color: #ff2b63;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "DIN-Bold";
+  @include font-size-in-em( 18px );
+
+  &:hover, &:focus {
+    background-color: #666;
+    color: #fff;
+  }
+}
+
+.btn--social {
+  padding: $default-pad-half;
+  background-color: #ddd;
+  color: #999;
+  @include skewX( -15deg );
+
+  &:hover, &:focus {
+    background-color: #fff;
+  }
+
+  i {
+    display: inline-block;
+    @include skewX( 15deg );
+  }
 }

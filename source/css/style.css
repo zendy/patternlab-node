@@ -480,6 +480,13 @@ p {
   margin-top: 0.2em;
 }
 
+/* line 4, scss/generic/_border-box-sizing.scss */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /*------------------------------------*\
     SUSY
 \*------------------------------------*/
@@ -494,6 +501,7 @@ p {
  * DIN-Regular
  * DIN-Medium
  * DIN-Bold
+ * icomoon
  */
 @font-face {
   font-family: 'DIN-Light';
@@ -535,6 +543,14 @@ p {
   font-weight: 700;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*------------------------------------*\
     BODY
 \*------------------------------------*/
@@ -544,10 +560,9 @@ p {
 /* line 9, scss/base/_body.scss */
 body {
   color: #333333;
-  font-family: "DIN-Light", "arial", "sans-serif";
+  font-family: "DIN-Regular", "arial", "sans-serif";
   font-size: 100%;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 /*------------------------------------*\
@@ -558,10 +573,12 @@ body {
  */
 /* line 9, scss/base/_link.scss */
 a {
+  font-family: "DIN-Light";
+  font-weight: 200;
   color: #cc0544;
   text-decoration: none;
 }
-/* line 13, scss/base/_link.scss */
+/* line 15, scss/base/_link.scss */
 a:hover, a:focus {
   color: #333333;
 }
@@ -577,33 +594,46 @@ a:hover, a:focus {
  * h5, .teta
  * h6, .zeta
  */
+/* line 13, scss/base/_headings.scss */
+h1, h2, h3, h4, h6 {
+  font-family: "DIN-Bold";
+  font-weight: 700;
+}
+
+/* line 18, scss/base/_headings.scss */
+h4, h5 {
+  color: #cc0544;
+}
+
 @media (min-width: 19em) {
-  /* line 15, scss/base/_headings.scss */
+  /* line 23, scss/base/_headings.scss */
   h1, .alpha {
     font-size: 2.25em;
   }
 
-  /* line 19, scss/base/_headings.scss */
+  /* line 27, scss/base/_headings.scss */
   h2, .beta {
     font-size: 1.9375em;
   }
 
-  /* line 23, scss/base/_headings.scss */
+  /* line 31, scss/base/_headings.scss */
   h3, .gamma {
     font-size: 1.6875em;
   }
 
-  /* line 27, scss/base/_headings.scss */
+  /* line 35, scss/base/_headings.scss */
   h4, .delta {
     font-size: 1.375em;
   }
 
-  /* line 31, scss/base/_headings.scss */
+  /* line 39, scss/base/_headings.scss */
   h5, .teta {
+    font-family: "DIN-Medium";
+    font-weight: 400;
     font-size: 0.9375em;
   }
 
-  /* line 35, scss/base/_headings.scss */
+  /* line 45, scss/base/_headings.scss */
   h6, .zeta {
     font-size: 0.75em;
   }
@@ -612,14 +642,75 @@ a:hover, a:focus {
     ICONS
 \*------------------------------------*/
 /**
- *
+ * .icon-linkedin
+ * .icon-twitter
+ * .icon-googleplus
+ * .icon-facebook
+ * .icon-mail
+ * .icon-comment
  */
+/* line 13, scss/base/_icons.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 27, scss/base/_icons.scss */
+.icon-linkedin:before {
+  content: "\e600";
+}
+
+/* line 30, scss/base/_icons.scss */
+.icon-twitter:before {
+  content: "\e601";
+}
+
+/* line 33, scss/base/_icons.scss */
+.icon-googleplus:before {
+  content: "\e602";
+}
+
+/* line 36, scss/base/_icons.scss */
+.icon-facebook:before {
+  content: "\e603";
+}
+
+/* line 39, scss/base/_icons.scss */
+.icon-mail:before {
+  content: "\e604";
+}
+
+/* line 42, scss/base/_icons.scss */
+.icon-comment:before {
+  content: "\e605";
+}
+
 /*------------------------------------*\
     PARAGRAPH
 \*------------------------------------*/
 /**
  * p
  */
+/* line 9, scss/base/_paragraph.scss */
+p {
+  font-family: "DIN-Light";
+  font-weight: 200;
+  font-size: 1.125em;
+}
+/* line 14, scss/base/_paragraph.scss */
+p strong {
+  font-family: "DIN-Bold";
+  font-weight: 700;
+}
+
 /*------------------------------------*\
     LISTS
 \*------------------------------------*/
@@ -627,6 +718,11 @@ a:hover, a:focus {
  * ul
  * ol
  */
+/* line 14, scss/base/_lists.scss */
+ol {
+  padding-left: 1.3em;
+}
+
 /*------------------------------------*\
     TABLE
 \*------------------------------------*/
@@ -670,7 +766,7 @@ a:hover, a:focus {
 /* line 22, scss/component/_buttons.scss */
 .btn--disabled {
   background-color: #f9f9f9;
-  color: #fff;
+  color: #ddd;
 }
 
 /* line 27, scss/component/_buttons.scss */
@@ -684,12 +780,65 @@ a:hover, a:focus {
   font-size: 1.125em;
 }
 
+/* line 36, scss/component/_buttons.scss */
+.btn--submit {
+  padding: 1em;
+  background-color: #ff2b63;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "DIN-Bold";
+  font-size: 1.125em;
+}
+/* line 44, scss/component/_buttons.scss */
+.btn--submit:hover, .btn--submit:focus {
+  background-color: #666;
+  color: #fff;
+}
+
+/* line 50, scss/component/_buttons.scss */
+.btn--social {
+  padding: 0.5em;
+  background-color: #ddd;
+  color: #999;
+  -webkit-transform: skewX(-15deg);
+  -moz-transform: skewX(-15deg);
+  -ms-transform: skewX(-15deg);
+  -o-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}
+/* line 56, scss/component/_buttons.scss */
+.btn--social:hover, .btn--social:focus {
+  background-color: #fff;
+}
+/* line 60, scss/component/_buttons.scss */
+.btn--social i {
+  display: inline-block;
+  -webkit-transform: skewX(15deg);
+  -moz-transform: skewX(15deg);
+  -ms-transform: skewX(15deg);
+  -o-transform: skewX(15deg);
+  transform: skewX(15deg);
+}
+
 /*------------------------------------*\
     COMMENTS
 \*------------------------------------*/
 /**
  *
  */
+/*------------------------------------*\
+    CAPTIONS
+\*------------------------------------*/
+/* line 6, scss/component/_captions.scss */
+.caption {
+  display: block;
+  padding: 2em;
+  background-color: #333;
+  color: #fff;
+  font-family: "DIN-Medium";
+  font-weight: 400;
+}
+
 /*------------------------------------*\
     MODULE
 \*------------------------------------*/
