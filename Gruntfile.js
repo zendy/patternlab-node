@@ -32,6 +32,12 @@ module.exports = function(grunt) {
        files: ['source/css/**/*.scss', 'public/styleguide/styles/*.scss'],
        tasks: ['default']
       },
+      compass: {
+        files: [
+          'source/css/**/*.{scss,sass}'
+        ],
+        tasks: ['compass', 'default']
+      },
       mustache: {
         files: ['source/_patterns/**/*.mustache'],
         tasks: ['default']
@@ -88,6 +94,6 @@ module.exports = function(grunt) {
 
   //if you choose to use scss, or any preprocessor, you can add it here
   // grunt.registerTask('default', ['clean', 'patternlab', 'sass', 'copy']);
-  grunt.registerTask('default', ['clean', 'patternlab', 'compass', 'copy']);
+  grunt.registerTask('default', ['clean', 'patternlab', 'copy']);
   grunt.registerTask('dev', ['connect', 'watch']);
 };

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------*\
     COMPASS
 \*------------------------------------*/
@@ -735,14 +736,93 @@ ol {
     FORM
 \*------------------------------------*/
 /**
- *
+ * .form--search
  */
+/* line 10, scss/base/_form.scss */
+form label {
+  color: #666;
+  font-family: "DIN-Medium";
+  font-weight: 400;
+}
+/* line 16, scss/base/_form.scss */
+form input {
+  height: 35px;
+  position: relative;
+}
+
 /*------------------------------------*\
     COMPONENT
 \*------------------------------------*/
 /*------------------------------------*\
     NAVIGATIONS
 \*------------------------------------*/
+/**
+ * .nav--category
+ * .nav--article
+ */
+/* line 10, scss/component/_navigations.scss */
+.nav--category {
+  height: 50px;
+  background-color: #f20544;
+  background-image: -webkit-linear-gradient(-45deg, #f20544, #f20544 25%, #cc0544 25%, #cc0544 50%, #b30544 50%, #b30544 75%, #cc0544 75%);
+  background-image: -moz-linear-gradient(-45deg, #f20544, #f20544 25%, #cc0544 25%, #cc0544 50%, #b30544 50%, #b30544 75%, #cc0544 75%);
+  background-image: -o-linear-gradient(-45deg, #f20544, #f20544 25%, #cc0544 25%, #cc0544 50%, #b30544 50%, #b30544 75%, #cc0544 75%);
+  background-image: linear-gradient(-45deg, #f20544, #f20544 25%, #cc0544 25%, #cc0544 50%, #b30544 50%, #b30544 75%, #cc0544 75%);
+}
+/* line 15, scss/component/_navigations.scss */
+.nav--category input[type="checkbox"] {
+  display: none;
+}
+/* line 18, scss/component/_navigations.scss */
+.nav--category input[type="checkbox"]:checked + .nav--category__topic {
+  display: block;
+}
+/* line 23, scss/component/_navigations.scss */
+.nav--category .nav--category__topic {
+  display: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f20544), color-stop(100%, #b30544));
+  background-image: -webkit-linear-gradient(#f20544, #b30544);
+  background-image: -moz-linear-gradient(#f20544, #b30544);
+  background-image: -o-linear-gradient(#f20544, #b30544);
+  background-image: linear-gradient(#f20544, #b30544);
+}
+/* line 27, scss/component/_navigations.scss */
+.nav--category .nav--category__topic li {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
+/* line 33, scss/component/_navigations.scss */
+.nav--category a {
+  color: #fff;
+  font-size: 1.125em;
+}
+/* line 37, scss/component/_navigations.scss */
+.nav--category a:hover, .nav--category a:focus {
+  color: #f99;
+}
+
+/* line 43, scss/component/_navigations.scss */
+.nav--article {
+  border: 3px dotted #ccc;
+}
+/* line 46, scss/component/_navigations.scss */
+.nav--article li {
+  border-top: 3px dotted #ccc;
+}
+/* line 49, scss/component/_navigations.scss */
+.nav--article li:first-child {
+  border-top: none;
+}
+/* line 54, scss/component/_navigations.scss */
+.nav--article a {
+  display: block;
+  padding: 0.5em;
+}
+/* line 58, scss/component/_navigations.scss */
+.nav--article a:focus, .nav--article a:hover {
+  background-color: #fff;
+}
+
 /*------------------------------------*\
     BUTTONS
 \*------------------------------------*/
@@ -759,30 +839,30 @@ ol {
   background-color: #fff;
   border: 0;
   color: #333333;
+  cursor: pointer;
   line-height: 1;
   text-align: center;
 }
 
-/* line 22, scss/component/_buttons.scss */
+/* line 23, scss/component/_buttons.scss */
 .btn--disabled {
   background-color: #f9f9f9;
   color: #ddd;
 }
 
-/* line 27, scss/component/_buttons.scss */
+/* line 28, scss/component/_buttons.scss */
 .btn--small {
   font-size: 0.875em;
 }
 
-/* line 31, scss/component/_buttons.scss */
+/* line 32, scss/component/_buttons.scss */
 .btn-large {
   padding: 0.5em;
   font-size: 1.125em;
 }
 
-/* line 36, scss/component/_buttons.scss */
+/* line 37, scss/component/_buttons.scss */
 .btn--submit {
-  padding: 1em;
   background-color: #ff2b63;
   border-radius: 5px;
   color: #fff;
@@ -820,6 +900,31 @@ ol {
   transform: skewX(15deg);
 }
 
+/* line 66, scss/component/_buttons.scss */
+.btn--category {
+  height: 50px;
+  position: relative;
+  padding: 0;
+  padding-left: 50px;
+  background-color: transparent;
+  color: #fff;
+  line-height: 50px;
+  font-size: 1.375em;
+}
+/* line 76, scss/component/_buttons.scss */
+.btn--category::after {
+  height: 25px;
+  left: 10px;
+  position: absolute;
+  top: 13px;
+  width: 25px;
+  border: 1px #fff solid;
+  content: '☰';
+  font-size: 1em;
+  line-height: 1;
+  text-indent: 0;
+}
+
 /*------------------------------------*\
     COMMENTS
 \*------------------------------------*/
@@ -840,6 +945,14 @@ ol {
 }
 
 /*------------------------------------*\
+    SOCIAL LINKS
+\*------------------------------------*/
+/* line 7, scss/component/_social-links.scss */
+.social-links li {
+  display: inline;
+}
+
+/*------------------------------------*\
     MODULE
 \*------------------------------------*/
 /*------------------------------------*\
@@ -854,6 +967,74 @@ ol {
 /**
  *
  */
+/*------------------------------------*\
+    ARTICLE
+\*------------------------------------*/
+/**
+ * .article__header-block
+ * .article__header-block__date
+ * .article__header-block__author
+ */
+/* line 11, scss/module/_article.scss */
+.article__header-block {
+  padding: 1em;
+  width: 70%;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 18, scss/module/_article.scss */
+.article__header-block__date, .article__header-block__author {
+  font-size: 0.875em;
+}
+
+/* line 22, scss/module/_article.scss */
+.article__header-block__date {
+  color: #666;
+}
+
+/* line 26, scss/module/_article.scss */
+.article__header-block__author {
+  color: #cc0544;
+}
+
+/* line 31, scss/module/_article.scss */
+.article__header__figure img {
+  display: block;
+}
+
+/* line 36, scss/module/_article.scss */
+.article__tags {
+  color: #999;
+  font-size: 0.77778em;
+}
+/* line 40, scss/module/_article.scss */
+.article__tags span {
+  color: #333;
+}
+
+/* line 45, scss/module/_article.scss */
+.article__likes {
+  display: block;
+  position: relative;
+  color: #fff;
+  line-height: 31px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+/* line 53, scss/module/_article.scss */
+.article__likes.icon-comment::before {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  color: #ff2b63;
+  font-size: 2.1em;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+}
+
 /*------------------------------------*\
     FOOTER
 \*------------------------------------*/

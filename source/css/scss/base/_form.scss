@@ -2,6 +2,19 @@
     FORM
 \*------------------------------------*/
 /**
- *
+ * .form--search
  */
 
+
+form {
+  label {
+    color: #666;
+    font-family: "DIN-Medium";
+    font-weight: 400;
+  }
+
+  input {
+    height: 35px;
+    position: relative;
+  }
+}
